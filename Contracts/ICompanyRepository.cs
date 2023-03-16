@@ -7,5 +7,10 @@ public interface ICompanyRepository
 {
     Task<IEnumerable<Company>> GetCompaniesAsync();
     Task<Company> GetCompanyByIdAsync(int id);
-    Task<Company> CreateCompany(CompanyForCreationDto company);
+    Task<Company> CreateCompanyAsync(CompanyForCreationDto company);
+    Task UpdateCompanyAsync(int id, CompanyForUpdateDto company);
+    Task DeleteCompanyAsync(int id);
+    Task<Company> GetCompanyByEmployeeIdAsync(int id);
+    Task<Company?> GetMultipleResults(int id);
+    Task<List<Company>> GetMultipleMapping();
 }
